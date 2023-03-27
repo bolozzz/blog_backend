@@ -3,6 +3,7 @@ package v1
 import (
 	"blog-service/pkg/app"
 	"blog-service/pkg/errcode"
+	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,6 +16,7 @@ func NewArticle() Article {
 
 func (a Article) Get(c *gin.Context) {
 	app.NewResponse(c).ToErrorResponse(errcode.ServerError)
+	fmt.Println()
 	return
 }
 func (a Article) List(c *gin.Context) {
